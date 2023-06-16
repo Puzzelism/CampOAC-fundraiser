@@ -1,10 +1,12 @@
+
 ﻿<h1 align="center">
 CampOAC - Fundraiser website
 </h1>
+<h3 align="center">Built for UBCO COSC 499 2023</h3>
 
 ![Version - 0.0.1](https://img.shields.io/badge/version-pending-lightgrey?style=for-the-badge)
 
-**Maintainers:** <br />
+**Original Developers:** <br />
 
 _Michael Boulanger
 <br />
@@ -13,26 +15,28 @@ Sai Rohith Enumala
  Paul Ranger
  <br />
  Baillie Stang_
+ 
+ **Maintainer of this branch:** <br />
+Baillie Stang
 
 <p align="center">
-  <img alt="Logo1" src="https://media.discordapp.net/attachments/931270620547784754/1045467416894902332/Camp-OAC-Logo-Primary.png" width="300" height = "300">
+  <img alt="Logo1" src="https://media.discordapp.net/attachments/931270620547784754/1045467416894902332/Camp-OAC-Logo-Primary.png" width="200" height = "200">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="logo2" src="https://media.discordapp.net/attachments/931270620547784754/1045468871781523456/officialclublogo_rotary.png" width="300" height = "300">
+  <img alt="logo2" src="https://media.discordapp.net/attachments/931270620547784754/1045468871781523456/officialclublogo_rotary.png" width="200" height = "200">
 </p>
 
 ## About
 
-We are developing a mobile-friendly website to help the general public obtain
-campfire wood. The user will select the location (from a list of available locations)
+The CampOAC fundraiser website was a project for the capstone course at UBC okanagan during the 2023 winter term.
+We developed a mobile-friendly website to help the general public obtain
+campfire wood. The user selects a location (from a configurable list of available locations)
 and the desired number of bags of firewood on the website. Then, they will receive an email
 with an invoice generated based on the pricing and quantity ordered. The website then processes
 payment or retains an invoice for cash payment at pick-up time. The receipt is automatically generated.
 Users groups include local residents as well as tourists, most people who need a smaller quantity of wood
 as for larger orders people would be more likely to turn to a bulk supplier.
 
-## TO DO
-
-### Tech Stack
+## Tech Stack
 
 **Backend**
 | NAME | LATEST VERSION | PURPOSE |
@@ -45,7 +49,7 @@ as for larger orders people would be more likely to turn to a bulk supplier.
 **Package Manager:**
 | NAME | LATEST VERSION | PURPOSE |
 |--|--|--|
-| NodeJS | Comes bundled with Node | self-explanatory |
+| NPM| Comes bundled with Node | self-explanatory |
 
 **Frontend**
 | NAME | LATEST VERSION | PURPOSE |
@@ -55,8 +59,17 @@ as for larger orders people would be more likely to turn to a bulk supplier.
 
 ### Documentation Manual
 
+*Some features might be broken as a result of third party accounts no longer functioning. These include the delivery of sms messages via [Twilio](https://www.twilio.com/en-us?utm_source=google&utm_medium=cpc&utm_term=twilio&utm_campaign=G_S_NAMER_Brand_ROW_RLSA&cq_plac=&cq_net=g&cq_pos=&cq_med=&cq_plt=gp&gad=1&gclid=CjwKCAjwkLCkBhA9EiwAka9QRjw_61BUZiaxF6nnihrbW19yMGqEyoRUgrT_j4i0a1o6ZRV4z8x8RxoCw3EQAvD_BwE), which are no longer maintained.*
+
+Majority of tech documentaton is standard for a react application see [here](https://github.com/facebook/create-react-app)
+
 Entire program located in <b>react-app</b> folder
 
+    npm run start
+
+calls for the program to build into static files and host them from the server file, this process can take some time.
+
+### Directory structure
 Font and graphics elements located in <b>build</b> and <b>public</b> folders
 
 Main application broken into two parts: <b>server</b> and <b>src</b>
@@ -69,12 +82,12 @@ Main application broken into two parts: <b>server</b> and <b>src</b>
 <b>server</b> contains backend functionality:  
   -<b>models</b> folder contains database schema for mongoDB  
   -index.js has endpoints to handle all API calls and server communication  
-
+<hr>
 Frontend page functionalities such as placing orders or viewing databases make API call from frontend which is then received in appropriate handler in backend server/index.js
 
 Example workflow for placing order with credit payment:  
   1. User lands on home page and navigates to order page (handled by src/index.js)  
-  2. Order page makes API call to view current locations  
+  2. Order page makes API call to view current available ocations  
   3. API call received by server/index.js which communicates with database server and returns location info  
   4. order page displays LocationForm to let user view locations and select one  
   5. user selects location  
